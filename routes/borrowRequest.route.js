@@ -6,9 +6,9 @@ const getMyLentItemsService = require('../controllers/getMyLentItems.service.js'
 const updateMyBorrowRequestService = require('../controllers/updateBorrowRequest.service.js');
 const router = express.Router();
 
-router.post('/', authentication, addBorrowRequestService);
-router.get('/borrowed', authentication, getMyBorrowedItemsService);
-router.get('/lent', authentication, getMyLentItemsService);
-router.patch('/:id', authentication, updateMyBorrowRequestService);
+router.post('/', addBorrowRequestService);
+router.get('/borrowed', getMyBorrowedItemsService);
+router.get('/lent', getMyLentItemsService);
+router.patch('/:id', updateMyBorrowRequestService);
 
 module.exports = router;
